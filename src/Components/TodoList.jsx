@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 
 // import './TodoList.css'
 import style from './TodoList.module.scss'
@@ -13,16 +12,11 @@ function TodoList(props) {
     <ul>
       {
         tasks.map((task, index) => {
-          return <TodoItem key={task.id} task={task} index={index} />
+          return <TodoItem key={task.id} task={task} index={index} editTask={props.editTask} />
         })
       }
     </ul>
   )
-}
-
-TodoList.propTypes = {
-  // tasks: PropTypes.array
-  tasks: PropTypes.arrayOf(PropTypes.object).isRequired
 }
 
 export default TodoList
