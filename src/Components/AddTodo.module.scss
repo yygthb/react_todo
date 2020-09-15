@@ -1,0 +1,117 @@
+.new_task {
+  margin-bottom: 1rem;
+
+  span {
+
+    input {
+      padding-bottom: 2px;
+      margin: 5px;
+      border: none;
+      border-bottom: 1px solid grey;
+      font-size: 1.1rem;
+  
+      &:focus {
+        outline: none;
+      }
+      &:active {
+        background-color: rgba(211, 211, 211, 0.3);
+      }
+    }
+  }
+
+  button {
+    padding: 5px 10px;
+    background-color: rgba(211, 211, 211, 0.3);
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+
+    &:hover {
+      cursor: pointer;
+      background-color: rgba(211, 211, 211, 0.6);
+    }
+    &:active {
+      background-color: rgba(211, 211, 211, 0.9);
+    }
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+
+// checkbox custom styling
+// from https://css-tricks.com/custom-styling-form-inputs-with-modern-css-features/
+
+@supports(-webkit-appearance: none) or (-moz-appearance: none) {
+  input[type='checkbox'],
+  input[type='radio'] {
+    --active: rgba(211, 211, 211, 0.9);
+    --active-inner: #fff;
+    --focus: 2px rgba(211, 211, 211, 0.6);
+    --border: rgba(211, 211, 211, 0.6);
+    --border-hover: rgba(186, 186, 186, 0.9);
+    --background: #fff;
+    --disabled: rgba(220, 220, 220, 0.9);
+    --disabled-inner: rgba(186, 186, 186, 0.9);
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    height: 21px;
+    outline: none;
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+    margin: 0;
+    cursor: pointer;
+    border: 1px solid var(--bc, var(--border));
+    background: var(--b, var(--background));
+    transition: background .3s, border-color .3s, box-shadow .2s;
+    &:after {
+      content: '';
+      display: block;
+      left: 0;
+      top: 0;
+      position: absolute;
+      transition: transform var(--d-t, .3s) var(--d-t-e, ease), opacity var(--d-o, .2s);
+    }
+    &:checked {
+      --b: var(--active);
+      --bc: var(--active);
+      --d-o: .3s;
+      --d-t: .6s;
+      --d-t-e: cubic-bezier(.2, .85, .32, 1.2);
+    }
+    &:not(.switch) {
+      width: 21px;
+      &:after {
+        opacity: var(--o, 0);
+      }
+      &:checked {
+        --o: 1;
+      }
+    }
+    & + label {
+      cursor: pointer;
+      margin-right: 5px;
+      // margin-left: 5px;
+    }
+  }
+  input[type='checkbox'] {
+    &:not(.switch) {
+      border-radius: 5px;
+      &:after {
+        width: 4px;
+        height: 8px;
+        border: 2px solid var(--active-inner);
+        border-top: 0;
+        border-left: 0;
+        left: 7px;
+        top: 4px;
+        transform: rotate(var(--r, 20deg));
+      }
+      &:checked {
+        --r: 43deg;
+      }
+    }
+  }
+}

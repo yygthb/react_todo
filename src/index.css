@@ -1,14 +1,15 @@
 @font-face {
-  font-family: roboto;
+  font-family: robotoRegular;
   src: url(./roboto/Roboto-Regular.ttf)
 }
 
 * {
-  font-family: roboto;
+  font-family: robotoRegular;
 }
 
 html {
   box-sizing: border-box;
+  cursor: default;
 }
 
 body {
@@ -29,12 +30,19 @@ code {
 
 .wrap {
   margin: 0 auto;
-  padding-top: 2rem;
+  padding: 2rem;
   max-width: 600px;
   background-color: white;
 
   display: block;
-  min-height: 100vw;
+  min-height: 100vh;
 
   text-align: center;
+}
+
+
+@media screen and (max-width: 551px) {
+  .wrap {
+    padding: 2rem .5rem;
+  }
 }

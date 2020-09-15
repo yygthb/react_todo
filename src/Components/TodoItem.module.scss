@@ -2,14 +2,15 @@ li {
   display: flex;
   justify-content: space-between;
   border: 1px solid lightgrey;
-  border-radius: 3px;
+  border-radius: 7px;
   margin-bottom: 0 auto .5rem;
-  padding: .5rem .1rem;
+  padding: .5rem .1rem .5rem .5rem;
 
   list-style-type: none;
   margin-bottom: 1rem;
 
   input {
+    cursor: pointer;
     margin-right: .5rem;
     margin-left: .5rem;
   }
@@ -18,12 +19,15 @@ li {
     margin-right: .5rem;
     border: none;
     border-radius: 50%;
+    padding-bottom: 2px;
+    background-color: rgba(211, 211, 211, 0.3);
   
     &:hover {
-      background-color: lightgrey;
+      cursor: pointer;
+      background-color: rgba(211, 211, 211, 0.6);
     }
     &:active {
-      background-color: grey;
+      background-color: rgba(211, 211, 211, 0.9);;
     }
     &:focus {
       outline: none;
